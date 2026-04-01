@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Playfair+Display:wght@400;700;900&family=Inter:wght@400;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-romantic-bg: #0a050a;
+  --color-romantic-accent: #ff4e91;
+  --color-romantic-purple: #2d0a31;
+  --font-serif: "Playfair Display", serif;
+  --font-script: "Dancing Script", cursive;
+}
+
+body {
+  background-color: var(--color-romantic-bg);
+  color: white;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+}
+
+.gif-container {
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 280px;
+  height: 280px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .gif-container {
+    width: 450px;
+    height: 450px;
+  }
+}
+
+.gif-container img {
+  border-radius: 12px;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.floating-heart {
+  position: absolute;
+  color: var(--color-romantic-accent);
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: 0;
+  animation: float 6s linear infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(100vh) scale(0);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-20vh) scale(1.5);
+    opacity: 0;
+  }
+}
+
+.text-glow {
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 78, 145, 0.3);
+}
+
+.btn-romantic {
+  background: linear-gradient(45deg, #ff4e91, #ff8e53);
+  padding: 1rem 2.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 78, 145, 0.4);
+}
+
+.btn-romantic:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(255, 78, 145, 0.6);
+}
+
+.btn-no {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 1rem 2.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-no:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
